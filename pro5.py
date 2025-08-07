@@ -10,7 +10,7 @@ with col1:
 
     #input logic
     jobp=st.text_input("Enter the job position",key="jp")
-    bsalary=st.number_input("Enter the Basic Salary",key='bs',min_value=0,format="%d")
+    bsalary=st.number_input("Enter the Basic Salary",key='bs',format="%d")
 
     if jobp and bsalary:
         jobp=str(jobp)
