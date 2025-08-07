@@ -24,15 +24,15 @@ with col1:
 
             if jobp == "Manager":
                 bonus = bsalary * 20 / 100
-                row.append(["Manager",bsalary,20.00,bonus])
+                row.append(["Manager",bsalary,bonus])
 
             if jobp == "Clark":
                 bonus = bsalary * 10 / 100
-                row.append(["Clark",bsalary,10.00,bonus])
+                row.append(["Clark",bsalary,bonus])
 
             if jobp == "Other":
                 bonus = bsalary * 5 / 100
-                row.append(["Other",bsalary,5.00,bonus])
+                row.append(["Other",bsalary,bonus])
             
             bonus=bonus
             Total_salary=bsalary+bonus
@@ -46,7 +46,8 @@ with col1:
             df=pd.DataFrame(row,columns=["Description","Basic Salary","Bonus","Total Salary"])
 
                 #format the rate and cost columns
-           
+            df["Bonus"] = df["Bonus"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
+            df["Total Salary"] = df["Total Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
             st.table(df)
 
         except Exception as e:
