@@ -17,20 +17,20 @@ with col1:
         bsalary=int(bsalary)
 
 
-    if st.button("Calculate"):
-        row = []
+        if st.button("Calculate"):
+            row = []
 
-        if jobp == "Manager":
-            bonus = bsalary * 20 / 100
-        elif jobp == "Clark":
-            bonus = bsalary * 10 / 100
-        else:  # Other
-            bonus = bsalary * 5 / 100
+            if jobp == "Manager":
+                bonus = bsalary * 20 / 100
+            elif jobp == "Clark":
+                bonus = bsalary * 10 / 100
+            else:  # Other
+                bonus = bsalary * 5 / 100
 
-        total_salary = bsalary + bonus
+            total_salary = bsalary + bonus
 
-        row.append([jobp, bsalary, bonus, total_salary])
-                
+            row.append([jobp, bsalary, bonus, total_salary])
+                    
             
             
 
