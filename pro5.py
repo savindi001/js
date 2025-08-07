@@ -24,21 +24,24 @@ with col1:
 
             if jobp == "Manager":
                 bonus = bsalary * 20 / 100
-                row.append(["Manager",bsalary,bonus])
+                
 
             if jobp == "Clark":
                 bonus = bsalary * 10 / 100
-                row.append(["Clark",bsalary,bonus])
+                
 
             if jobp == "Other":
                 bonus = bsalary * 5 / 100
-                row.append(["Other",bsalary,bonus])
+                
             
             bonus=bonus
             Total_salary=bsalary+bonus
+            row.append(["Manager",bsalary,bonus,Total_salary])
+            row.append(["Clark",bsalary,bonus,Total_salary])
+            row.append(["Other",bsalary,bonus,Total_salary])
 
             Total_salary=round(bsalary+bonus,2)
-            row.append(["Total Salary","--","--",Total_salary])
+            
 
             st.info(f"Total Salary: Rs.{Total_salary:.2f}")
 
