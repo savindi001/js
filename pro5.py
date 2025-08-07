@@ -18,6 +18,7 @@ with col1:
 
 
     if st.button("Calculate"):
+        try:
             row = []
 
             if jobp == "Manager":
@@ -38,7 +39,7 @@ with col1:
                     
 
             st.info(f"Total Salary: Rs.{Total_salary:.2f}")
-
+ 
                     #convert to dataframe and show table
             df=pd.DataFrame(row,columns=["Description","Basic Salary","Bonus","Total Salary"])
 
@@ -47,6 +48,9 @@ with col1:
             df["Total Salary"] = df["Total Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
             df["Basic Salary"] = df["Basic Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
             st.table(df)
+
+        except Exception as e:
+            st.error(f"Error calculating Salary:{e}")
 
 
 
