@@ -4,7 +4,7 @@ import pandas as pd
 st.title("Job Salary Bonas Calculator",width="stretch")
 
 #Create columns to control layout
-col1,col2,col3=st.columns([3,1,1])
+col1,col2=st.columns([3,2])
 
 with col1:
 
@@ -46,8 +46,7 @@ with col1:
             df=pd.DataFrame(row,columns=["Description","Basic Salary","Bonus","Total Salary"])
 
                 #format the rate and cost columns
-            df["Bonus"] = df["Bonus"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
-            df["Total Salary"] = df["Total Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
+           
             st.table(df)
 
         except Exception as e:
