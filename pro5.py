@@ -45,11 +45,11 @@ with col1:
                 #format the rate and cost columns
     df["Bonus"] = df["Bonus"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
     df["Total Salary"] = df["Total Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
+    df["Basic Salary"] = df["Basic Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
     st.table(df)
 
 
-with col2:
-    	st.text_input("Options\nManager\nClark\nOther")
+
     
 
 
