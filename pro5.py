@@ -17,7 +17,7 @@ with col1:
         bsalary=int(bsalary)
 
 
-        if st.button("Calculate"):
+    if st.button("Calculate"):
             row = []
 
             if jobp == "Manager":
