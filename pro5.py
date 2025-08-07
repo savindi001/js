@@ -22,11 +22,11 @@ with col1:
         try:
             row=[]
 
-            if jobp == "manager":
+            if jobp == "Manager":
                 bonus = bsalary * 20 / 100
                 row.append(["Manager",bsalary,20.00,bonus])
 
-            if jobp == "clark":
+            if jobp == "Clark":
                 bonus = bsalary * 10 / 100
                 row.append(["Clark",bsalary,10.00,bonus])
 
@@ -53,6 +53,9 @@ with col1:
         except Exception as e:
             st.error(f"Error calculating bill:{e}")
 
+with col2:
+    	st.text_input("Options\nManager\nClark\nOther")
+    
 
 
 
