@@ -34,19 +34,19 @@ with col1:
             
             
 
-    Total_salary=round(bsalary+bonus,2)
-            
+            Total_salary=round(bsalary+bonus,2)
+                    
 
-    st.info(f"Total Salary: Rs.{Total_salary:.2f}")
+            st.info(f"Total Salary: Rs.{Total_salary:.2f}")
 
-             #convert to dataframe and show table
-    df=pd.DataFrame(row,columns=["Description","Basic Salary","Bonus","Total Salary"])
+                    #convert to dataframe and show table
+            df=pd.DataFrame(row,columns=["Description","Basic Salary","Bonus","Total Salary"])
 
-                #format the rate and cost columns
-    df["Bonus"] = df["Bonus"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
-    df["Total Salary"] = df["Total Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
-    df["Basic Salary"] = df["Basic Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
-    st.table(df)
+                        #format the rate and cost columns
+            df["Bonus"] = df["Bonus"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
+            df["Total Salary"] = df["Total Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
+            df["Basic Salary"] = df["Basic Salary"].apply(lambda x: f"{x:.2f}" if isinstance(x,(int,float))else x)
+            st.table(df)
 
 
 
